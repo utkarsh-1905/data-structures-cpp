@@ -156,24 +156,112 @@ public:
 
         head = prev;
     }
+
+    // merge two linked list
+    void Merge(LinkedList l1, LinkedList l2)
+    {
+        Node *itr1 = l1.head;
+        Node *itr2 = l2.head;
+
+        while (itr1 != NULL && itr2 != NULL)
+        {
+            if (itr1->data < itr2->data)
+            {
+                Add(itr1->data);
+                itr1 = itr1->next;
+            }
+            else
+            {
+                Add(itr2->data);
+                itr2 = itr2->next;
+            }
+        }
+
+        while (itr1 != NULL)
+        {
+            Add(itr1->data);
+            itr1 = itr1->next;
+        }
+
+        while (itr2 != NULL)
+        {
+            Add(itr2->data);
+            itr2 = itr2->next;
+        }
+    }
 };
 
 int main()
 {
     LinkedList myList;
+    cout << "Enter the numbers you want to add to the list: " << endl;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter the number: " << endl;
+        int data;
+        cin >> data;
+        myList.Add(data);
+    }
+    cout << "Operations on Linked List" << endl;
+    cout << "1. Display" << endl;
+    cout << "2. Count and Sum" << endl;
+    cout << "3. Search" << endl;
+    cout << "4. Delete" << endl;
+    cout << "5. Is Sorted" << endl;
+    cout << "6. Reverse" << endl;
+    cout << "7. Merge" << endl;
+    cout << "8. Exit" << endl;
+    int choice;
+    while (true)
+    {
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            myList.Display();
+            break;
+        case 2:
+            myList.CountAndSum();
+            break;
 
-    myList.Add(1);
-    myList.Add(2);
-    myList.Add(4);
-    myList.Add(3);
-    myList.Display();
-    cout << "Reverse" << endl;
-    myList.Reverse();
-    myList.Display();
-    // myList.CountAndSum();
-    // myList.Search(5);
-    // myList.Search(2);
-    // myList.IsSorted();
+        case 3:
+            cout << "Enter the number you want to search: " << endl;
+            int key;
+            cin >> key;
+            myList.Search(key);
+            break;
+
+        case 4:
+            cout << "Enter the number you want to delete: " << endl;
+            int key1;
+            cin >> key1;
+            myList.Delete(key1);
+            break;
+
+        case 5:
+            myList.IsSorted();
+            break;
+
+        case 6:
+            myList.Reverse();
+            break;
+
+        case 7:
+            cout << "Merge" << endl;
+            // pending
+            break;
+
+        case 8:
+            exit(0);
+            break;
+
+        default:
+            cout << "Invalid Choice" << endl;
+            break;
+        }
+    }
 
     return 0;
 }
