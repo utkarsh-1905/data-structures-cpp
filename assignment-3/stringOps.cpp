@@ -41,7 +41,6 @@ public:
         string::iterator it = myString.begin();
         while (it != myString.end())
         {
-            cout << *it << endl;
             if (*it == ' ')
             {
                 count++;
