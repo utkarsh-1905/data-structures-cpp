@@ -1,7 +1,7 @@
 all: compile run
 
 # change for the workspace folder
-folder=assignment-2
+folder=assignment-3
 
 # Compiling the program
 compile:
