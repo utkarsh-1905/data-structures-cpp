@@ -51,11 +51,6 @@ public:
 
     int Peek()
     {
-        return arr[0];
-    }
-
-    int Top()
-    {
         return arr[elementCount - 1];
     }
 
@@ -85,15 +80,48 @@ int main()
     cout << "Enter size of stack :" << endl;
     cin >> size;
     Stack s(size);
-    s.Push(1);
-    s.Push(2);
-    s.Push(3);
-    s.Push(4);
-    s.Display();
-    cout << "popped" << endl;
-    s.Pop();
-    s.Display();
-    cout << "peek " << s.Peek() << endl;
-    cout << "top " << s.Top() << endl;
+    int choice;
+    cout << "1. Push" << endl;
+    cout << "2. Pop" << endl;
+    cout << "3. Peek" << endl;
+    cout << "4. Display" << endl;
+    cout << "5. IsEmpty" << endl;
+    cout << "6. IsFull" << endl;
+    cout << "7. Size" << endl;
+    cout << "8. Exit" << endl;
+    while (true)
+    {
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            int data;
+            cout << "Enter data" << endl;
+            cin >> data;
+            s.Push(data);
+            break;
+        case 2:
+            s.Pop();
+            break;
+        case 3:
+            cout << "Peek: " << s.Peek() << endl;
+            break;
+        case 5:
+            s.Display();
+            break;
+        case 6:
+            cout << "Empty: " << s.IsEmpty() << endl;
+            break;
+        case 7:
+            cout << "IsFull: " << s.IsFull() << endl;
+            break;
+        case 8:
+            cout << "Size: " << s.Size() << endl;
+            break;
+        case 9:
+            exit(0);
+            break;
+        }
+    }
     return 0;
 }
