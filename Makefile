@@ -1,7 +1,7 @@
 all: compile run
 
 # change for the workspace folder
-folder=practice/linked-list
+folder=practice/stack
 
 # Compiling the program
 compile:

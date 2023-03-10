@@ -40,7 +40,7 @@ public:
             return 0;
         }
         int count = 1;
-        string::iterator it = myString.begin();
+        auto it = myString.begin();
         while (it != myString.end())
         {
             if (*it == ' ')
@@ -60,7 +60,7 @@ public:
         }
         int count = 0;
         string chotiString = LowerCase();
-        string::iterator it = chotiString.begin();
+        auto it = chotiString.begin();
         while (it != chotiString.end())
         {
             if (*it == 'a' || *it == 'e' || *it == 'i' || *it == 'o' || *it == 'u')
@@ -79,7 +79,7 @@ public:
             return "false";
         }
         int count = 0;
-        string::iterator it = myString.begin();
+        auto it = myString.begin();
         while (it != myString.end())
         {
             if ((int)*it >= 65 || (int)*it <= 91 || (int)*it >= 97 || (int)*it <= 123)
@@ -104,7 +104,7 @@ public:
         {
             return "";
         }
-        string::reverse_iterator it = myString.rbegin();
+        auto it = myString.rbegin();
         string revString = "";
         while (it != myString.rend())
         {
@@ -132,7 +132,7 @@ public:
             return "";
         }
         string dupString = "";
-        string::iterator it = myString.begin();
+        auto it = myString.begin();
         while (it != myString.end())
         {
             if (dupString.find(*it) == string::npos)
