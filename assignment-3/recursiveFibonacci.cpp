@@ -24,7 +24,7 @@ int main()
 {
 
     int num;
-    cout << "Enter the number upto which you want to find the series: " << endl;
+    cout << "Enter the number of terms you want: " << endl;
     cin >> num;
     for (int i = 0; i < num; i++)
     {
