@@ -1,7 +1,7 @@
 all: compile run
 
 # change for the workspace folder
-folder=practice/stack
+folder=assignment-6
 
 # Compiling the program
 compile:
